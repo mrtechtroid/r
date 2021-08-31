@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MR TECHTROID</title>
+
+  <meta name="description"
+    content="This Website Has Various Educational Apps And Simulations And Various Other Tools Which Will Help You Learning and Understanding New Concepts And Also Get You Started With Many Things.">
+
+  <link rel="icon" href="/assets/favicon.png" type="image/icon type">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KPN8JSN6DJ"></script>
+  <style>
+    .progressbar {
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+
+    @media (max-width: 820px) {
+      #vrn {
+        display: none;
+      }
+
+      #cr {
+        position: none;
+      }
+    }
+
+    */ body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: black;
+      background-color: black;
+      font-family: Questrial;
+      margin: 0px;
+      min-width: 310px;
+    }
+
+    #navbar {
+      height: 100px;
+      padding-left: 5%;
+      padding-right: 5%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+    }
+
+    #logo {
+      width: 100px;
+      height: 100px;
+
+    }
+
+    .section {
+      height: 400px;
+
+      display: flex;
+      flex-direction: row;
+      /* justify-content: space-evenly; */
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #con {
+      flex-basis: 40%;
+      margin-left: 20px;
+      padding: 30px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #linkgen:hover #linkgen:focus {
+      background-color: rgb(30, 128, 0);
+    }
+  </style>
+</head>
+
+<body style="background-color: black; font-family: Consolas; ">
+  <div id="navbar">
+    <img src="https://mrtechtroid.github.io/assets/MTT_prev_ui.png" id="logo" alt="MTT Logo"
+      onclick="document.location ='https://mrtechtroid.github.io/'">
+  </div>
+  <div id="titlepage" class="section">
+    <div id="con">
+      <span style="width: 300px;">
+        <span style="font-size: 60px;font:Roboto  bold;color:rgb(229, 255, 0);font-weight: bold;text-align: center;"
+          id="main_heading">404</span><br />
+        <span class="hd" id="text1" style="color:aqua;text-align: center;">The Page You Requested Doesnt Exist. Enjoy
+          The Rickroll Till Then <span style="color:white;">By MTT</span></span>
+      </span>
+      <div id="noclick" style="pointer-events:none">
+        <div id="player"></div>
+              <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/xvFZjo5PgG0?&autoplay=1&playsinline=1&controls=0&disablekb=1&rel=0&cc_load_policy=1"
+            , frameborder="0" allowfullscreen allow="autoplay; fullscreen"></iframe> --> -->
+          <!-- <iframe frameborder="0" width="400" height="360" src="https://www.dailymotion.com/embed/video/x3fas4j?autoplay=1&ui-highlight=fff" allowfullscreen allow="autoplay; fullscreen"> -->
+      </div>
+    </div>
+  </div>
+  <script>
+    var webredirect = ""
+    const refer = window.location.search;
+    if (refer == "?pacman") {
+      webredirect = "https://www.google.com/logos/2010/pacman10-i.html"}
+    if (refer.toLowerCase().includes("game") || refer.toLowerCase().includes("coupon") || refer.toLowerCase().includes("download") || refer.toLowerCase().includes("game") || refer.toLowerCase().includes("play") || refer.toLowerCase().includes("rick") || refer.toLowerCase() == ("?u=1")) { webredirect = "https://m.youtube.com/watch?v=dQw4w9WgXcQ" };
+    if (refer.includes("?w=")) { webdirecta = atob(refer.replace("?w=", "")); webredirect = webdirecta };
+    if (refer.includes("?g=")) { webdirecta = refer.replace("?g=", "https://github.com/mrtechtroid/"); webredirect = webdirecta };
+    if (refer.includes("?y=")) { webdirecta = refer.replace("?y=", "https://youtube.com/watch?v="); webredirect = webdirecta };
+    var elem = document.getElementById("Progress");
+    var width = 20;
+    if (refer == "?h-w3spaces") { document.getElementById("load").innerText = "Welcome From h@ck.w3sp@c3s.c0m" }
+    if (webredirect == "") { } else {
+      window.location = webredirect
+    }
+
+  </script>
+  <script>
+    // 2. This code loads the IFrame Player API code asynchronously.
+    var tag = document.createElement('script');
+
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    // 3. This function creates an <iframe> (and YouTube player)
+    //    after the API code downloads.
+    var player;
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player', {
+        height: '300',
+        width: '500',
+        videoId: 'xvFZjo5PgG0',
+        playerVars: {
+          'playsinline': 1,
+          'controls': 0,
+          'disablekb': 1,
+          'rel': 0,
+          'autoplay': 1,
+          'cc_load_policy': 1,
+          'showinfo': 0,
+          'mute': 1
+        },
+        events: {
+          'onReady': onPlayerReady,
+          'onStateChange': onPlayerStateChange
+        }
+      });
+    }
+
+    // 4. The API will call this function when the video player is ready.
+    function onPlayerReady(event) {
+      event.target.playVideo();
+    }
+
+    // 5. The API calls this function when the player's state changes.
+    //    The function indicates that when playing a video (state=1),
+    //    the player should play for six seconds and then stop.
+    var done = false;
+    function onPlayerStateChange(event) {
+      if (event.data == YT.PlayerState.PLAYING && !done) {
+        setTimeout(stopVideo, 6000);
+        done = true;
+      }
+    }
+    function stopVideo() {
+      player.stopVideo();
+    }
+  </script>
+</body>
+
+</html>

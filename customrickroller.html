@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- stylesheet and fonts-->
+    <!-- <link rel="stylesheet" href="https://mrtechtroid.github.io/css.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    < <!-- Primary Meta Tags -->
+        <title>Custom Rickroller</title>
+        <meta name="title" content="Custom Rickroller">
+        <meta name="description" content="Make A Custom Rick Roll Using This Custom Rick Roll Generator">
+        <meta name="keywords"
+            content="open source, rickroll, rick, rickroller, custom rick roll generator,rick roll generator">
+        <meta name="robots" content="index, follow">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="language" content="English">
+        <meta name="revisit-after" content="31 days">
+        <meta name="author" content="Mr Techtroid">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                background-color: black;
+                background-color: black;
+                font-family: Questrial;
+                margin: 0px;
+                min-width: 310px;
+            }
+
+            #navbar {
+                height: 100px;
+                padding-left: 5%;
+                padding-right: 5%;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+            }
+
+            #logo {
+                width: 100px;
+                height: 100px;
+
+            }
+
+            .section {
+                height: 400px;
+
+                display: flex;
+                flex-direction: row;
+                /* justify-content: space-evenly; */
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #con {
+                flex-basis: 40%;
+                margin-left: 20px;
+                padding: 30px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+            #linkgen:hover #linkgen:focus {
+                background-color: rgb(30, 128, 0);
+            }
+        </style>
+</head>
+
+<body>
+    <div id="navbar">
+        <img src="https://mrtechtroid.github.io/assets/MTT_prev_ui.png" id="logo" alt="MTT Logo"
+            onclick="document.location ='https://mrtechtroid.github.io/'">
+    </div>
+    <div id="titlepage" class="section">
+        <div id="con">
+            <span style="font-size: 60px;font:Roboto  bold;color:rgb(229, 255, 0);font-weight: bold;text-align: center;"
+                id="main_heading">Custom Rickroll Link Generator</span><br />
+            <span class="hd" id="text1" style="color:aqua;text-align: center;">Write a good headline and then trick your
+                friends/enemies with the link.</span>
+            <span style="display: flex;flex-direction: row;align-items: baseline;">
+                <input id="ricktxt"
+                    style="padding:15px;margin:15px;width:50vw;color:white;background-color: transparent;border:4px solid lime;font-weight: bold;" onchange="gtlink()" onclick="gtlink()" onkeyup="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();">
+                <input type="text" list="sub_obs" / name="sub" id="ricksub" value="Breaking"
+                    style="padding:10px;width:10vw;color:white;background-color: black;border:4px solid lime;" onchange="gtlink()" onclick="gtlink()" onkeyup="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();">
+                <datalist id="sub_obs">
+                    <option value="Art">Art</option>
+                    <option value="Business">Business</option>
+                    <option value="Breaking">Breaking</option>
+                    <option value="Culture">Culture</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Food">Food</option>
+                    <option value="Local">Local</option>
+                    <option value="Movies">Movies</option>
+                    <option value="Music">Music</option>
+                    <option value="Nation">Nation</option>
+                    <option value="Opinion">Opinion</option>
+                    <option value="Science">Science</option>
+                    <option value="Sports">Sports</option>
+                    <option value="Style">Style</option>
+                    <option value="Tech">Tech</option>
+                    <option value="Travel">Travel</option>
+                    <option value="World">World</option>
+                </datalist>
+            </span>
+            <span id="linkgen"
+                style="padding: 10px;background-color: rgb(90, 104, 102);color: rgb(102, 255, 71);" onclick="clip()">https://mrtechtroid.github.io/r/the-breaking-title</span>
+        </div>
+    </div>
+    <script>
+        function gtlink() {
+            sub = document.getElementById("ricksub").value.toLowerCase()
+            headline = document.getElementById("ricktxt").value.toLowerCase()
+            headline = headline.replaceAll(" ","-")
+            headline = headline.replaceAll(".","")
+            if (headline == ""){
+                headline = "the-breaking-title"
+            }
+            a = "https://mrtechtroid.github.io/r/"
+            link = a + sub + "/" + headline
+            document.getElementById("linkgen").innerText = link
+        }
+        function clip() {
+            var copyText = document.getElementById("linkgen");
+            copyText.select();
+            copyText.setSelectionRange(0, 99999);
+            navigator.clipboard.writeText(copyText.value);
+            alert("Copied the text: " + copyText.value);
+        }
+    </script>
+</body>
