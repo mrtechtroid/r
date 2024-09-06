@@ -115,8 +115,13 @@
                     <option value="World">World</option>
                 </datalist>
             </span>
+            <span style="color:white">Use any of the following links:</span>
             <span id="linkgen"
                 style="padding: 10px;background-color: rgb(90, 104, 102);color: rgb(102, 255, 71);" onclick="clip()">https://mrtechtroid.github.io/r/the-breaking-title</span>
+            <br><span id="linkgen2"
+                style="padding: 10px;background-color: rgb(90, 104, 102);color: rgb(102, 255, 71);" onclick="clip()">https://mtt.one/r/the-breaking-title</span>
+            <br><span id="linkgen3"
+                style="padding: 10px;background-color: rgb(90, 104, 102);color: rgb(102, 255, 71);" onclick="clip()">https://lnk2.netlify.app/r/the-breaking-title</span>
         </div>
     </div>
     <script>
@@ -125,12 +130,9 @@
             headline = document.getElementById("ricktxt").value.toLowerCase()
             headline = headline.replaceAll(" ","-")
             headline = headline.replaceAll(".","")
-            if (headline == ""){
-                headline = "the-breaking-title"
-            }
-            a = "https://mrtechtroid.github.io/r/"
-            link = a + sub + "/" + headline
-            document.getElementById("linkgen").innerText = link
+            document.getElementById("linkgen").innerText = "https://mrtechtroid.github.io/r/" + sub + "/" + headline
+            document.getElementById("linkgen2").innerText = "https://mtt.one/r/" + sub + "/" + headline
+            document.getElementById("linkgen3").innerText = "https://lnk2.netlify.app/r/" + sub + "/" + headline
         }
         function clip() {
             var copyText = document.getElementById("linkgen");
